@@ -1,0 +1,34 @@
+name: Market Intelligence Daily
+
+on:
+  schedule:
+    - cron: '0 22 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Run pipeline
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          GSHEET_SA: ${{ secrets.GSHEET_SA }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python pipeline.py
+      - name: Guardar results.json
+        run: |
+          git config user.name "market-intel-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add results.json || true
+          git commit -m "update results.json" || echo "sin cambios"
+          git push || echo "nada que pushear"
