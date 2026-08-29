@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Market Intelligence Terminal</title>
+<style>
+:root{--bg:#0b0e14;--panel:#111722;--head:#161d2b;--line:#1e2836;--txt:#e6edf3;--dim:#8b98a9;--accent:#3b82f6;--green:#22c55e;--red:#ef4444;--amber:#f59e0b;--cyan:#06b6d4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:14px;line-height:1.5;padding:16px;max-width:1100px;margin:0 auto}
+h1{font-size:16px;letter-spacing:.5px} .sub{color:var(--dim);font-size:11px;margin-top:2px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.grid{display:grid;gap:12px}
+.g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:720px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h2{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:600}
+.big{font-size:22px;font-weight:700} .mid{font-size:15px;font-weight:600}
+.row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+.pill{display:inline-block;padding:1px 8px;border-radius:20px;font-size:11px;font-weight:700}
+.bar{height:7px;background:var(--head);border-radius:4px;overflow:hidden;margin-top:3px}
+.bar>span{display:block;height:100%}
+.sec{margin-top:16px}
+.narr{background:var(--head);border-left:3px solid var(--accent);padding:12px 14px;border-radius:0 8px 8px 0;line-height:1.7}
+ul{list-style:none} li{padding:3px 0;color:var(--dim)} li::before{content:"▸ ";color:var(--accent)}
+.upd{color:var(--dim);font-size:11px} .warn{color:var(--amber)}
+table{width:100%;border-collapse:collapse} td{padding:4px 0;border-bottom:1px solid var(--line)}
+.muted{color:var(--dim)}
+</style>
+</head>
+<body>
+<div class="top">
+  <div><h1>◧ MARKET INTELLIGENCE TERMINAL</h1><div class="sub" id="sub">cargando…</div></div>
+  <div style="text-align:right"><div class="upd" id="dq"></div><div class="upd" id="upd"></div></div>
+</div>
+<div id="app"></div>
+
+<script>
+const SAMPLE={"asof": "2026-08-28", "data_quality": 100, "confidence": {"label": "HIGH", "agree": 5, "total": 5}, "regimes": {"fundamental": {"label": "Reflacion", "transition": false}, "market": {"label": "Strong Risk-On", "score": 73}, "liquidity": {"label": "Tightening", "score": 38}}, "cycle": {"growth": 90, "inflation": 72, "velG": -2, "velI": -15, "drift": "estable"}, "drivers": [{"name": "Tendencia", "score": 78}, {"name": "Credito", "score": 65}, {"name": "Volatilidad", "score": 81}, {"name": "Crecimiento", "score": 90}, {"name": "Breadth", "score": 61}], "confirmation": {"confirmed": true, "leaders": ["XLF", "XLE", "IWM", "XLB"], "invalidation": 53.11}, "allocation": [{"asset": "XLF", "score": 80, "positioning": "Overweight"}, {"asset": "XLE", "score": 78, "positioning": "Overweight"}, {"asset": "IWM", "score": 70, "positioning": "Overweight"}, {"asset": "DBC", "score": 64, "positioning": "Neutral"}, {"asset": "SPY", "score": 58, "positioning": "Neutral"}, {"asset": "QQQ", "score": 40, "positioning": "Underweight"}, {"asset": "TLT", "score": 30, "positioning": "Avoid"}], "contradiction": "el precio sube pero la participacion (breadth) se debilita", "invalidation": ["XLF pierde SMA200 (~53.11)", "Market -> Risk-Off / credito HY se ensancha", "ejes cruzan histeresis 45/55"], "watchlist": ["XLF SMA200", "HYG/LQD", "breadth", "VIX term", "real yields (DFII10)"], "narrative": "Regimen Reflacion (crec pctl 90 desacelerando, infl pctl 72 enfriandose), estable. Mercado Strong Risk-On (73). Liquidez Tightening. Regimen confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH."};
+const col=(s,g=55,y=45)=>s>=g?'var(--green)':(s>=y?'var(--amber)':'var(--red)');
+const regColor=r=>({'Goldilocks':'var(--accent)','Reflacion':'var(--green)','Estanflacion':'var(--amber)','Deflacion':'var(--red)'}[r]||'var(--dim)');
+const posColor=p=>({'Overweight':'var(--green)','Slight OW':'var(--green)','Neutral':'var(--dim)','Underweight':'var(--amber)','Avoid':'var(--red)'}[p]||'var(--dim)');
+
+function render(d){
+  document.getElementById('sub').textContent='Régimen fundamental · mercado · liquidez · flujos · decisión';
+  document.getElementById('dq').innerHTML='Data Quality: <b style="color:'+col(d.data_quality,90,70)+'">'+d.data_quality+'/100</b>';
+  document.getElementById('upd').textContent='datos al '+d.asof;
+  const R=d.regimes, C=d.cycle;
+  let h='';
+  // 3 regimenes
+  h+='<div class="grid g3">';
+  h+=card('Fundamental Regime','<div class="big" style="color:'+regColor(R.fundamental.label)+'">'+R.fundamental.label+'</div>'+(R.fundamental.transition?'<div class="warn" style="font-size:11px">en transición</div>':'')+'<div class="sub">Growth '+C.growth+' · Infl '+C.inflation+'</div>');
+  h+=card('Market Regime','<div class="big" style="color:'+col(R.market.score)+'">'+R.market.score+'</div><div class="mid">'+R.market.label+'</div><div class="sub">estado, no pronóstico</div>');
+  h+=card('Liquidity','<div class="big" style="color:'+col(R.liquidity.score)+'">'+R.liquidity.score+'</div><div class="mid">'+R.liquidity.label+'</div>');
+  h+='</div>';
+  // narrativa
+  h+='<div class="sec card"><h2>Market Narrative</h2><div class="narr">'+d.narrative+'</div>';
+  h+='<div class="sub" style="margin-top:8px">Confianza: <b style="color:'+col(d.confidence.agree,4,3)+'">'+d.confidence.label+'</b> ('+d.confidence.agree+'/'+d.confidence.total+' drivers) · Contradicción: <span class="warn">'+d.contradiction+'</span></div></div>';
+  // ciclo + drivers
+  h+='<div class="sec grid g2">';
+  let cyc='<div class="row"><span>Crecimiento</span><b>'+C.growth+' <span class="muted">('+(C.velG>=0?'+':'')+C.velG+'/mes)</span></b></div>';
+  cyc+='<div class="row"><span>Inflación</span><b>'+C.inflation+' <span class="muted">('+(C.velI>=0?'+':'')+C.velI+'/mes)</span></b></div>';
+  cyc+='<div class="row"><span>Deriva</span><b>'+C.drift+'</b></div>';
+  h+=card('Economic Cycle',cyc);
+  let dr='';(d.drivers||[]).forEach(x=>{dr+='<div style="margin-bottom:6px"><div class="row" style="border:0"><span>'+x.name+'</span><b style="color:'+col(x.score)+'">'+x.score+'</b></div><div class="bar"><span style="width:'+x.score+'%;background:'+col(x.score)+'"></span></div></div>';});
+  h+=card('Driver Matrix',dr);
+  h+='</div>';
+  // allocation
+  let al='<table>';(d.allocation||[]).forEach(a=>{al+='<tr><td>'+a.asset+'</td><td class="muted">'+a.score+'</td><td style="text-align:right"><span class="pill" style="background:'+posColor(a.positioning)+'22;color:'+posColor(a.positioning)+'">'+a.positioning+'</span></td></tr>';});al+='</table>';
+  h+='<div class="sec grid g2">'+card('Preferred Assets (positioning)',al);
+  // confirmation + invalidation + watch
+  let cf='<div class="row"><span>Estado</span><b style="color:'+(d.confirmation.confirmed?'var(--green)':'var(--amber)')+'">'+(d.confirmation.confirmed?'CONFIRMADO':'sin confirmar')+'</b></div>';
+  cf+='<div class="row"><span>Líderes</span><b>'+(d.confirmation.leaders||[]).join(', ')+'</b></div>';
+  cf+='<div class="row"><span>Invalidación</span><b class="warn">'+d.confirmation.leaders[0]+' &lt; '+d.confirmation.invalidation+'</b></div>';
+  cf+='<h2 style="margin-top:12px">Qué vigilar</h2><ul>'+(d.watchlist||[]).map(w=>'<li>'+w+'</li>').join('')+'</ul>';
+  h+=card('Confirmation & Watchlist',cf)+'</div>';
+  document.getElementById('app').innerHTML=h;
+}
+function card(t,inner){return '<div class="card"><h2>'+t+'</h2>'+inner+'</div>';}
+
+// cargar results.json en vivo (anti-cache); si falla, usar muestra embebida
+fetch('results.json?t='+Date.now(),{cache:'no-store'})
+  .then(r=>{if(!r.ok)throw 0;return r.json()})
+  .then(render)
+  .catch(()=>{render(SAMPLE);document.getElementById('upd').textContent+=' (muestra — aún no hay results.json)';});
+</script>
+</body>
+</html>
