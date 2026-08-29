@@ -1,0 +1,139 @@
+{
+  "asof": "2026-08-28",
+  "data_quality": 100.0,
+  "confidence": {
+    "label": "HIGH",
+    "agree": 5,
+    "total": 5
+  },
+  "regimes": {
+    "fundamental": {
+      "label": "Reflacion",
+      "transition": false
+    },
+    "market": {
+      "label": "Strong Risk-On",
+      "score": 73
+    },
+    "liquidity": {
+      "label": "Tightening",
+      "score": 37
+    }
+  },
+  "cycle": {
+    "growth": 90,
+    "inflation": 72,
+    "velG": -2,
+    "velI": -15,
+    "drift": "estable"
+  },
+  "drivers": [
+    {
+      "name": "Tendencia",
+      "score": 71
+    },
+    {
+      "name": "Credito",
+      "score": 75
+    },
+    {
+      "name": "Volatilidad",
+      "score": 71
+    },
+    {
+      "name": "Crecimiento",
+      "score": 90
+    },
+    {
+      "name": "Breadth",
+      "score": 89
+    }
+  ],
+  "confirmation": {
+    "confirmed": true,
+    "leaders": [
+      "XLF",
+      "XLE",
+      "IWM",
+      "XLB"
+    ],
+    "invalidation": 53.14
+  },
+  "allocation": [
+    {
+      "asset": "XLF",
+      "score": 86,
+      "positioning": "Overweight"
+    },
+    {
+      "asset": "XLE",
+      "score": 76,
+      "positioning": "Overweight"
+    },
+    {
+      "asset": "XLB",
+      "score": 68,
+      "positioning": "Overweight"
+    },
+    {
+      "asset": "DBC",
+      "score": 67,
+      "positioning": "Overweight"
+    },
+    {
+      "asset": "IWM",
+      "score": 59,
+      "positioning": "Neutral"
+    },
+    {
+      "asset": "HYG",
+      "score": 59,
+      "positioning": "Neutral"
+    },
+    {
+      "asset": "SPY",
+      "score": 56,
+      "positioning": "Neutral"
+    },
+    {
+      "asset": "GLD",
+      "score": 41,
+      "positioning": "Underweight"
+    },
+    {
+      "asset": "TLT",
+      "score": 39,
+      "positioning": "Underweight"
+    },
+    {
+      "asset": "XLU",
+      "score": 33,
+      "positioning": "Avoid"
+    },
+    {
+      "asset": "QQQ",
+      "score": 22,
+      "positioning": "Avoid"
+    },
+    {
+      "asset": "XLK",
+      "score": 20,
+      "positioning": "Avoid"
+    }
+  ],
+  "contradiction": "sin contradicciones internas mayores",
+  "invalidation": [
+    "XLF pierde SMA200 (~53.14)",
+    "Market -> Risk-Off / credito HY se ensancha",
+    "ejes cruzan histeresis 45/55"
+  ],
+  "watchlist": [
+    "XLF SMA200",
+    "HYG/LQD",
+    "breadth",
+    "VIX term",
+    "real yields (DFII10)"
+  ],
+  "narrative": "Regimen Reflacion (crec pctl 90 desacelerando, infl pctl 72 enfriandose), estable. Mercado Strong Risk-On (73). Liquidez Tightening. Regimen confirmado por XLF, XLE, IWM, XLB. Contradiccion: sin contradicciones internas mayores. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-08-29T03:25:20.606340+00:00"
+}
