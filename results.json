@@ -1,9 +1,9 @@
 {
-  "asof": "2026-09-17",
+  "asof": "2026-09-18",
   "data_quality": 100.0,
   "confidence": {
-    "label": "HIGH",
-    "agree": 4,
+    "label": "MEDIUM",
+    "agree": 3,
     "total": 5
   },
   "regimes": {
@@ -13,32 +13,32 @@
     },
     "market": {
       "label": "Risk-On",
-      "score": 59
+      "score": 65
     },
     "liquidity": {
       "label": "Neutral",
-      "score": 50
+      "score": 51
     }
   },
   "cycle": {
     "growth": 83,
-    "inflation": 69,
+    "inflation": 61,
     "velG": -5,
-    "velI": -21,
+    "velI": -28,
     "drift": "estable"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 55
+      "score": 53
     },
     {
       "name": "Credito",
-      "score": 72
+      "score": 77
     },
     {
       "name": "Volatilidad",
-      "score": 49
+      "score": 65
     },
     {
       "name": "Crecimiento",
@@ -46,7 +46,7 @@
     },
     {
       "name": "Breadth",
-      "score": 67
+      "score": 44
     }
   ],
   "confirmation": {
@@ -67,32 +67,32 @@
     },
     {
       "asset": "XLE",
-      "score": 86,
+      "score": 85,
       "positioning": "Overweight"
     },
     {
       "asset": "XLF",
-      "score": 67,
+      "score": 63,
       "positioning": "Overweight"
     },
     {
       "asset": "SPY",
-      "score": 58,
-      "positioning": "Neutral"
-    },
-    {
-      "asset": "HYG",
-      "score": 51,
+      "score": 61,
       "positioning": "Neutral"
     },
     {
       "asset": "GLD",
-      "score": 51,
+      "score": 57,
+      "positioning": "Neutral"
+    },
+    {
+      "asset": "HYG",
+      "score": 47,
       "positioning": "Neutral"
     },
     {
       "asset": "XLB",
-      "score": 44,
+      "score": 43,
       "positioning": "Underweight"
     },
     {
@@ -101,23 +101,23 @@
       "positioning": "Underweight"
     },
     {
-      "asset": "TLT",
-      "score": 33,
-      "positioning": "Avoid"
-    },
-    {
       "asset": "XLK",
-      "score": 24,
-      "positioning": "Avoid"
+      "score": 36,
+      "positioning": "Underweight"
     },
     {
       "asset": "QQQ",
-      "score": 23,
+      "score": 30,
+      "positioning": "Avoid"
+    },
+    {
+      "asset": "TLT",
+      "score": 30,
       "positioning": "Avoid"
     },
     {
       "asset": "XLU",
-      "score": 21,
+      "score": 19,
       "positioning": "Avoid"
     }
   ],
@@ -134,6 +134,6 @@
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Reflacion (crec pctl 83 desacelerando, infl pctl 69 enfriandose), estable. Mercado Risk-On (59). Liquidez Neutral. Regimen confirmado por XLF, XLE, IWM, XLB. Contradiccion: sin contradicciones internas mayores. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-09-17T22:09:11.509149+00:00"
+  "narrative": "Regimen Reflacion (crec pctl 83 desacelerando, infl pctl 61 enfriandose), estable. Mercado Risk-On (65). Liquidez Neutral. Regimen confirmado por XLF, XLE, IWM, XLB. Contradiccion: sin contradicciones internas mayores. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza MEDIUM.",
+  "generated_utc": "2026-09-18T22:08:54.538634+00:00"
 }
