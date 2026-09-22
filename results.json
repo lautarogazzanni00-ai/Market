@@ -1,9 +1,9 @@
 {
-  "asof": "2026-09-21",
+  "asof": "2026-09-22",
   "data_quality": 100.0,
   "confidence": {
     "label": "HIGH",
-    "agree": 4,
+    "agree": 5,
     "total": 5
   },
   "regimes": {
@@ -22,19 +22,19 @@
   },
   "cycle": {
     "growth": 92,
-    "inflation": 44,
-    "velG": 4,
-    "velI": -43,
+    "inflation": 40,
+    "velG": 1,
+    "velI": -39,
     "drift": "estable"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 70
+      "score": 69
     },
     {
       "name": "Credito",
-      "score": 80
+      "score": 81
     },
     {
       "name": "Volatilidad",
@@ -46,7 +46,7 @@
     },
     {
       "name": "Breadth",
-      "score": 44
+      "score": 67
     }
   ],
   "confirmation": {
@@ -55,7 +55,7 @@
       "QQQ",
       "XLK"
     ],
-    "invalidation": 664.13
+    "invalidation": 664.14
   },
   "allocation": [
     {
@@ -65,7 +65,7 @@
     },
     {
       "asset": "XLE",
-      "score": 69,
+      "score": 67,
       "positioning": "Overweight"
     },
     {
@@ -75,23 +75,23 @@
     },
     {
       "asset": "XLK",
-      "score": 61,
+      "score": 62,
       "positioning": "Neutral"
     },
     {
       "asset": "GLD",
-      "score": 60,
+      "score": 59,
       "positioning": "Neutral"
     },
     {
       "asset": "QQQ",
-      "score": 51,
+      "score": 52,
       "positioning": "Neutral"
     },
     {
       "asset": "XLF",
-      "score": 46,
-      "positioning": "Neutral"
+      "score": 42,
+      "positioning": "Underweight"
     },
     {
       "asset": "TLT",
@@ -105,12 +105,12 @@
     },
     {
       "asset": "XLB",
-      "score": 25,
+      "score": 26,
       "positioning": "Avoid"
     },
     {
       "asset": "IWM",
-      "score": 24,
+      "score": 23,
       "positioning": "Avoid"
     },
     {
@@ -121,7 +121,7 @@
   ],
   "contradiction": "el precio sube pero la participacion (breadth) se debilita",
   "invalidation": [
-    "QQQ pierde SMA200 (~664.13)",
+    "QQQ pierde SMA200 (~664.14)",
     "Market -> Risk-Off / credito HY se ensancha",
     "ejes cruzan histeresis 45/55"
   ],
@@ -132,6 +132,6 @@
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Goldilocks (crec pctl 92 acelerando, infl pctl 44 enfriandose), estable. Mercado Strong Risk-On (73). Liquidez Neutral. Regimen confirmado por QQQ, XLK. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Goldilocks mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-09-21T22:09:11.268486+00:00"
+  "narrative": "Regimen Goldilocks (crec pctl 92 acelerando, infl pctl 40 enfriandose), estable. Mercado Strong Risk-On (73). Liquidez Neutral. Regimen confirmado por QQQ, XLK. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Goldilocks mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-09-22T22:08:16.524855+00:00"
 }
