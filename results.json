@@ -1,71 +1,73 @@
 {
-  "asof": "2026-09-22",
+  "asof": "2026-09-23",
   "data_quality": 100.0,
   "confidence": {
     "label": "HIGH",
-    "agree": 5,
+    "agree": 4,
     "total": 5
   },
   "regimes": {
     "fundamental": {
-      "label": "Goldilocks",
+      "label": "Reflacion",
       "transition": false
     },
     "market": {
       "label": "Strong Risk-On",
-      "score": 73
+      "score": 74
     },
     "liquidity": {
       "label": "Neutral",
-      "score": 50
+      "score": 48
     }
   },
   "cycle": {
-    "growth": 92,
-    "inflation": 40,
+    "growth": 91,
+    "inflation": 58,
     "velG": 1,
-    "velI": -39,
-    "drift": "estable"
+    "velI": -19,
+    "drift": "derivando hacia Goldilocks"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 69
+      "score": 63
     },
     {
       "name": "Credito",
-      "score": 81
+      "score": 85
     },
     {
       "name": "Volatilidad",
-      "score": 69
+      "score": 73
     },
     {
       "name": "Crecimiento",
-      "score": 92
+      "score": 91
     },
     {
       "name": "Breadth",
-      "score": 67
+      "score": 44
     }
   ],
   "confirmation": {
-    "confirmed": true,
+    "confirmed": false,
     "leaders": [
-      "QQQ",
-      "XLK"
+      "XLF",
+      "XLE",
+      "IWM",
+      "XLB"
     ],
-    "invalidation": 664.14
+    "invalidation": 53.3
   },
   "allocation": [
     {
       "asset": "DBC",
-      "score": 73,
+      "score": 88,
       "positioning": "Overweight"
     },
     {
       "asset": "XLE",
-      "score": 67,
+      "score": 83,
       "positioning": "Overweight"
     },
     {
@@ -75,42 +77,42 @@
     },
     {
       "asset": "XLK",
-      "score": 62,
-      "positioning": "Neutral"
-    },
-    {
-      "asset": "GLD",
-      "score": 59,
-      "positioning": "Neutral"
-    },
-    {
-      "asset": "QQQ",
-      "score": 52,
+      "score": 55,
       "positioning": "Neutral"
     },
     {
       "asset": "XLF",
-      "score": 42,
-      "positioning": "Underweight"
+      "score": 53,
+      "positioning": "Neutral"
     },
     {
-      "asset": "TLT",
+      "asset": "GLD",
+      "score": 52,
+      "positioning": "Neutral"
+    },
+    {
+      "asset": "HYG",
       "score": 41,
       "positioning": "Underweight"
     },
     {
-      "asset": "HYG",
-      "score": 30,
-      "positioning": "Avoid"
+      "asset": "QQQ",
+      "score": 40,
+      "positioning": "Underweight"
     },
     {
       "asset": "XLB",
-      "score": 26,
-      "positioning": "Avoid"
+      "score": 40,
+      "positioning": "Underweight"
     },
     {
       "asset": "IWM",
-      "score": 23,
+      "score": 35,
+      "positioning": "Underweight"
+    },
+    {
+      "asset": "TLT",
+      "score": 24,
       "positioning": "Avoid"
     },
     {
@@ -121,17 +123,17 @@
   ],
   "contradiction": "el precio sube pero la participacion (breadth) se debilita",
   "invalidation": [
-    "QQQ pierde SMA200 (~664.14)",
+    "XLF pierde SMA200 (~53.30)",
     "Market -> Risk-Off / credito HY se ensancha",
     "ejes cruzan histeresis 45/55"
   ],
   "watchlist": [
-    "QQQ SMA200",
+    "XLF SMA200",
     "HYG/LQD",
     "breadth",
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Goldilocks (crec pctl 92 acelerando, infl pctl 40 enfriandose), estable. Mercado Strong Risk-On (73). Liquidez Neutral. Regimen confirmado por QQQ, XLK. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Goldilocks mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-09-22T22:08:16.524855+00:00"
+  "narrative": "Regimen Reflacion (crec pctl 91 acelerando, infl pctl 58 enfriandose), derivando hacia Goldilocks. Mercado Strong Risk-On (74). Liquidez Neutral. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-09-23T22:09:05.245157+00:00"
 }
