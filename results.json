@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-24",
+  "asof": "2026-09-25",
   "data_quality": 100.0,
   "confidence": {
     "label": "HIGH",
@@ -9,7 +9,7 @@
   "regimes": {
     "fundamental": {
       "label": "Reflacion",
-      "transition": false
+      "transition": true
     },
     "market": {
       "label": "Strong Risk-On",
@@ -17,24 +17,24 @@
     },
     "liquidity": {
       "label": "Neutral",
-      "score": 40
+      "score": 41
     }
   },
   "cycle": {
     "growth": 92,
-    "inflation": 64,
-    "velG": 6,
-    "velI": -14,
+    "inflation": 53,
+    "velG": 3,
+    "velI": -19,
     "drift": "derivando hacia Goldilocks"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 61
+      "score": 66
     },
     {
       "name": "Credito",
-      "score": 88
+      "score": 83
     },
     {
       "name": "Volatilidad",
@@ -76,18 +76,13 @@
       "positioning": "Neutral"
     },
     {
-      "asset": "GLD",
-      "score": 56,
-      "positioning": "Neutral"
-    },
-    {
       "asset": "XLF",
-      "score": 56,
+      "score": 59,
       "positioning": "Neutral"
     },
     {
-      "asset": "XLK",
-      "score": 47,
+      "asset": "GLD",
+      "score": 58,
       "positioning": "Neutral"
     },
     {
@@ -101,18 +96,23 @@
       "positioning": "Underweight"
     },
     {
+      "asset": "XLK",
+      "score": 38,
+      "positioning": "Underweight"
+    },
+    {
       "asset": "IWM",
       "score": 36,
       "positioning": "Underweight"
     },
     {
       "asset": "QQQ",
-      "score": 34,
+      "score": 31,
       "positioning": "Avoid"
     },
     {
       "asset": "TLT",
-      "score": 23,
+      "score": 25,
       "positioning": "Avoid"
     },
     {
@@ -121,7 +121,7 @@
       "positioning": "Avoid"
     }
   ],
-  "contradiction": "sin contradicciones internas mayores",
+  "contradiction": "el precio sube pero la participacion (breadth) se debilita",
   "invalidation": [
     "XLF pierde SMA200 (~53.31)",
     "Market -> Risk-Off / credito HY se ensancha",
@@ -134,6 +134,6 @@
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Reflacion (crec pctl 92 acelerando, infl pctl 64 enfriandose), derivando hacia Goldilocks. Mercado Strong Risk-On (74). Liquidez Neutral. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: sin contradicciones internas mayores. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-09-24T22:09:20.629548+00:00"
+  "narrative": "Regimen Reflacion (crec pctl 92 acelerando, infl pctl 53 enfriandose), derivando hacia Goldilocks. Mercado Strong Risk-On (74). Liquidez Neutral. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-09-25T22:08:59.655563+00:00"
 }
