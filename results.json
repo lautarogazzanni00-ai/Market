@@ -1,5 +1,5 @@
 {
-  "asof": "2026-09-25",
+  "asof": "2026-09-28",
   "data_quality": 100.0,
   "confidence": {
     "label": "HIGH",
@@ -13,7 +13,7 @@
     },
     "market": {
       "label": "Strong Risk-On",
-      "score": 74
+      "score": 72
     },
     "liquidity": {
       "label": "Neutral",
@@ -22,19 +22,19 @@
   },
   "cycle": {
     "growth": 92,
-    "inflation": 53,
-    "velG": 3,
-    "velI": -19,
-    "drift": "derivando hacia Goldilocks"
+    "inflation": 54,
+    "velG": 0,
+    "velI": -11,
+    "drift": "estable"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 66
+      "score": 57
     },
     {
       "name": "Credito",
-      "score": 83
+      "score": 84
     },
     {
       "name": "Volatilidad",
@@ -67,22 +67,27 @@
     },
     {
       "asset": "XLE",
-      "score": 84,
+      "score": 85,
       "positioning": "Overweight"
     },
     {
       "asset": "SPY",
-      "score": 60,
+      "score": 58,
+      "positioning": "Neutral"
+    },
+    {
+      "asset": "XLK",
+      "score": 49,
       "positioning": "Neutral"
     },
     {
       "asset": "XLF",
-      "score": 59,
+      "score": 48,
       "positioning": "Neutral"
     },
     {
       "asset": "GLD",
-      "score": 58,
+      "score": 46,
       "positioning": "Neutral"
     },
     {
@@ -92,12 +97,7 @@
     },
     {
       "asset": "XLB",
-      "score": 43,
-      "positioning": "Underweight"
-    },
-    {
-      "asset": "XLK",
-      "score": 38,
+      "score": 42,
       "positioning": "Underweight"
     },
     {
@@ -107,7 +107,7 @@
     },
     {
       "asset": "QQQ",
-      "score": 31,
+      "score": 33,
       "positioning": "Avoid"
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "asset": "XLU",
-      "score": 17,
+      "score": 18,
       "positioning": "Avoid"
     }
   ],
@@ -134,6 +134,6 @@
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Reflacion (crec pctl 92 acelerando, infl pctl 53 enfriandose), derivando hacia Goldilocks. Mercado Strong Risk-On (74). Liquidez Neutral. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-09-25T22:08:59.655563+00:00"
+  "narrative": "Regimen Reflacion (crec pctl 92 desacelerando, infl pctl 54 enfriandose), estable. Mercado Strong Risk-On (72). Liquidez Neutral. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-09-28T22:09:08.884941+00:00"
 }
