@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-08",
+  "asof": "2026-10-09",
   "data_quality": 100.0,
   "confidence": {
     "label": "HIGH",
@@ -13,24 +13,24 @@
     },
     "market": {
       "label": "Risk-On",
-      "score": 65
+      "score": 64
     },
     "liquidity": {
       "label": "Tightening",
-      "score": 37
+      "score": 36
     }
   },
   "cycle": {
-    "growth": 76,
-    "inflation": 73,
-    "velG": -13,
-    "velI": 6,
+    "growth": 78,
+    "inflation": 72,
+    "velG": -8,
+    "velI": 8,
     "drift": "estable"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 64
+      "score": 63
     },
     {
       "name": "Credito",
@@ -38,11 +38,11 @@
     },
     {
       "name": "Volatilidad",
-      "score": 67
+      "score": 65
     },
     {
       "name": "Crecimiento",
-      "score": 76
+      "score": 78
     },
     {
       "name": "Breadth",
@@ -72,23 +72,23 @@
     },
     {
       "asset": "XLK",
-      "score": 64,
-      "positioning": "Overweight"
-    },
-    {
-      "asset": "SPY",
       "score": 60,
       "positioning": "Neutral"
     },
     {
+      "asset": "SPY",
+      "score": 59,
+      "positioning": "Neutral"
+    },
+    {
       "asset": "GLD",
-      "score": 49,
+      "score": 45,
       "positioning": "Neutral"
     },
     {
       "asset": "QQQ",
-      "score": 48,
-      "positioning": "Neutral"
+      "score": 42,
+      "positioning": "Underweight"
     },
     {
       "asset": "HYG",
@@ -107,7 +107,7 @@
     },
     {
       "asset": "IWM",
-      "score": 37,
+      "score": 36,
       "positioning": "Underweight"
     },
     {
@@ -134,6 +134,6 @@
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Reflacion (crec pctl 76 desacelerando, infl pctl 73 firme), estable. Mercado Risk-On (65). Liquidez Tightening. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-10-09T01:43:20.936236+00:00"
+  "narrative": "Regimen Reflacion (crec pctl 78 desacelerando, infl pctl 72 firme), estable. Mercado Risk-On (64). Liquidez Tightening. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-10-10T01:29:56.612356+00:00"
 }
