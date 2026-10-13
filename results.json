@@ -1,5 +1,5 @@
 {
-  "asof": "2026-10-09",
+  "asof": "2026-10-12",
   "data_quality": 100.0,
   "confidence": {
     "label": "HIGH",
@@ -13,32 +13,32 @@
     },
     "market": {
       "label": "Risk-On",
-      "score": 64
+      "score": 68
     },
     "liquidity": {
       "label": "Tightening",
-      "score": 36
+      "score": 33
     }
   },
   "cycle": {
     "growth": 78,
-    "inflation": 72,
-    "velG": -8,
-    "velI": 8,
+    "inflation": 83,
+    "velG": -7,
+    "velI": 22,
     "drift": "estable"
   },
   "drivers": [
     {
       "name": "Tendencia",
-      "score": 63
+      "score": 67
     },
     {
       "name": "Credito",
-      "score": 64
+      "score": 67
     },
     {
       "name": "Volatilidad",
-      "score": 65
+      "score": 69
     },
     {
       "name": "Crecimiento",
@@ -57,7 +57,7 @@
       "IWM",
       "XLB"
     ],
-    "invalidation": 53.27
+    "invalidation": 53.28
   },
   "allocation": [
     {
@@ -67,12 +67,12 @@
     },
     {
       "asset": "XLE",
-      "score": 83,
+      "score": 84,
       "positioning": "Overweight"
     },
     {
       "asset": "XLK",
-      "score": 60,
+      "score": 62,
       "positioning": "Neutral"
     },
     {
@@ -82,8 +82,18 @@
     },
     {
       "asset": "GLD",
-      "score": 45,
+      "score": 48,
       "positioning": "Neutral"
+    },
+    {
+      "asset": "XLF",
+      "score": 44,
+      "positioning": "Underweight"
+    },
+    {
+      "asset": "XLB",
+      "score": 44,
+      "positioning": "Underweight"
     },
     {
       "asset": "QQQ",
@@ -92,16 +102,6 @@
     },
     {
       "asset": "HYG",
-      "score": 42,
-      "positioning": "Underweight"
-    },
-    {
-      "asset": "XLF",
-      "score": 42,
-      "positioning": "Underweight"
-    },
-    {
-      "asset": "XLB",
       "score": 42,
       "positioning": "Underweight"
     },
@@ -117,13 +117,13 @@
     },
     {
       "asset": "XLU",
-      "score": 19,
+      "score": 21,
       "positioning": "Avoid"
     }
   ],
   "contradiction": "el precio sube pero la participacion (breadth) se debilita",
   "invalidation": [
-    "XLF pierde SMA200 (~53.27)",
+    "XLF pierde SMA200 (~53.28)",
     "Market -> Risk-Off / credito HY se ensancha",
     "ejes cruzan histeresis 45/55"
   ],
@@ -134,6 +134,6 @@
     "VIX term",
     "real yields (DFII10)"
   ],
-  "narrative": "Regimen Reflacion (crec pctl 78 desacelerando, infl pctl 72 firme), estable. Mercado Risk-On (64). Liquidez Tightening. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
-  "generated_utc": "2026-10-10T01:29:56.612356+00:00"
+  "narrative": "Regimen Reflacion (crec pctl 78 desacelerando, infl pctl 83 firme), estable. Mercado Risk-On (68). Liquidez Tightening. Regimen NO confirmado por XLF, XLE, IWM, XLB. Contradiccion: el precio sube pero la participacion (breadth) se debilita. Caso base: continuidad de Reflacion mientras liderazgo y credito se sostengan. Confianza HIGH.",
+  "generated_utc": "2026-10-13T02:49:59.312008+00:00"
 }
